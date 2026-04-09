@@ -2,7 +2,31 @@
 
 ## How I used AI in this project
 
-I used Claude (claude.ai) as a learning assistant while building this project.
+I built this project by learning and applying concepts from official documentation and online guides.
+
+Instead of copying complete solutions, I focused on understanding each concept first and then implementing it step by step.
+
+---
+
+## Resources I used
+
+* DOM Manipulation Guide: JavaScript DOM Crash Course
+* LocalStorage: MDN Web Docs
+* Chart.js Documentation
+* jsPDF Library Documentation
+
+---
+
+## Approach
+
+I followed a step-by-step approach:
+
+* First, I understood how the feature works conceptually
+* Then I implemented it in small parts
+* Finally, I tested and debugged issues to make it work correctly
+
+This helped me gain a clear understanding of how each part of the application functions.
+
 
 Instead of asking it to generate full code, I focused more on understanding concepts first.
 I would ask for explanations, try writing the code myself, and then use AI to fix mistakes or clarify things I didn’t understand.
