@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Flow Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Cash Flow</h1>
+      <p>Track your salary and expenses in real time</p>
+    </div>
+    <div class="header-right">
+      <select id="currencySelect" data-currency-select>
+        <option value="INR">₹ INR</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+      </select>
+      <button class="btn-download" id="downloadBtn">⬇ Download Report</button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- LEFT: Form + List -->
+    <div style="display:flex; flex-direction:column; gap:20px;">
+
+      <div class="card">
+        <div class="card-title">Monthly Salary</div>
+        <div class="input-group">
+          <label for="salary">Amount (₹)</label>
+          <input type="number" id="salary" placeholder="e.g. 50000" step="0.01">
+        </div>
+        <button type="button" class="btn-primary" id="setSalaryBtn">Set Salary</button>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Add Expense</div>
+        <div class="expense-row">
+          <div class="input-group">
+            <label for="expenseName">Name</label>
+            <input type="text" id="expenseName" placeholder="e.g. Rent">
+          </div>
+          <div class="input-group">
+            <label for="expenseAmount">Amount (₹)</label>
+            <input type="number" id="expenseAmount" placeholder="e.g. 5000" step="0.01">
+          </div>
+        </div>
+        <button type="button" class="btn-primary" id="addExpenseBtn">Add Expense</button>
+
+        <hr class="divider">
+
+        <div class="card-title">Expenses</div>
+        <ul id="expenseList">
+          <li class="empty">No expenses added yet</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Stats + Chart -->
+    <div style="display:flex; flex-direction:column; gap:20px;">
+
+      <div class="card">
+        
+        <div class="card-title">Summary</div>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-label">Total Salary</span>
+            <span class="stat-value" id="displaySalary">₹0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Total Expenses</span>
+            <span class="stat-value red" id="displayTotalExpenses">₹0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Remaining Balance</span>
+            <span class="stat-value green" id="displayBalance">₹0</span>
+          </div>
+        </div>
+        
+        <div class="alert" id="budgetAlert">⚠️ Warning: Balance is below 10% of your salary!</div>
+        
+      </div>
+
+      <div class="card">
+        <div class="card-title">Breakdown</div>
+        <div class="chart-wrap">
+          <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
