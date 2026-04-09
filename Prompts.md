@@ -2,7 +2,7 @@
 
 ## How I used AI in this project
 
-I built this project by learning and applying concepts from official documentation and online guides.
+I built this project by learning and applying concepts from official documentation , online guides and claude ai to debug.
 
 Instead of copying complete solutions, I focused on understanding each concept first and then implementing it step by step.
 
